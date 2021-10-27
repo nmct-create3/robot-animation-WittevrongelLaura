@@ -43,6 +43,13 @@ html {
 }
 
 body {
+  min-height: 100vh; /*als je dat niet doet wordt de body maar zo hoog zoals de content*/
+  display: flex; /*vertikaal in het midden zetten*/
+  align-items: center; /*vertikaal in het midden zetten*/
+  justify-content: center; /*vertikaal in het midden zetten*/
+  background-color: var(--global-html-backgroundColor);
+  flex-direction: column; /*html robot2*/
+  gap: 2rem; /*html robot2*/
 }
 
 /*
@@ -133,11 +140,58 @@ body {
 */
 
 .c-robot {
+  max-width: 400px;
+  /* max-height: 80vh; */
+  /* margin: 0 auto; horizontaal in het midden (niet meer nodig sinds flexbox in body)*/
+  /* display: block; horizontaal in het midden (niet meer nodig sinds flexbox in body)*/ 
+
+  fill: var(--global-html-color);
+  --c-robot-animation-duration : 0.75s;
+  --c-robot-animation-timing-function : ease-in-out;
+  --c-robot-animation-iteration-count : infinite;
+  --c-robot-animation-direction : alternate;
 }
 
 .c-robot__shadow {
+  fill: var(--c-robot__shadow-fill, black);
+  opacity: .1;
+
 }
 
+.c-robot-css-anim #Robot {
+  animation-name: robotHover;
+  animation-duration: var(--c-robot-animation-duration);
+  animation-timing-function: var(--c-robot-animation-timing-function);
+  animation-iteration-count: var(--c-robot-animation-iteration-count);
+  animation-direction: var(--c-robot-animation-direction);
+}
+
+.c-robot-css-anim #Shadow {
+  transform-origin: 50% 100%; /*50% op de x-as en 100% op de y-as*/
+  animation-name: shadowPulse;
+  animation-duration: var(--c-robot-animation-duration);
+  animation-timing-function: var(--c-robot-animation-timing-function);
+  animation-iteration-count: var(--c-robot-animation-iteration-count);
+  animation-direction: var(--c-robot-animation-direction);
+}
+
+@keyframes shadowPulse {
+  100% {
+    /*op het einde moet hij een scale hebben*/
+    transform: scale(0.75);
+  }
+}
+
+@keyframes robotHover {
+  0% {
+    /*begin animatie*/
+    transform: translateY(2.5%);
+  }
+  100% {
+    /*einde animatie*/
+    transform: translateY(-2.5%);
+  }
+}
 
 /*
     Component: Controls
