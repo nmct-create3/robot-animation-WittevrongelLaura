@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>SVG animatie</title>
+    <meta name="description" content="This is my HTML5 boilerplate." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    
+    <script src="./script/app2.js"></script>
+    <style>
+      svg {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        left: 0%;
+        top: 0%;
+        display: block;
+        background: transparent;
+      }
+
+      .path {
+        stroke: black;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="js-lightning">Lightning Please!</button>
+    <svg id="svg" viewbox="0 0 25 150" xmlns="http://www.w3.org/2000/svg">
+      <path class="path" d="M23.6015625,21.4912109 L58.6015625,3.44335938 L39.4638672,66.1650391 L58.6456161,66.1650391 L4.84570313,147.023438 L23.4609375,84.7470703 L4.59423323,84.7470703 L23.6015625,21.4912109 Z" fill="transparent">
+        <animate id="lightning" attributeName="stroke-dashoffset" from="1000" to="0" begin="indefinite" dur="6s" fill="freeze" />
+      </path>
+    </svg>
+  </body>
+</html>

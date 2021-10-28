@@ -196,6 +196,41 @@ body {
 /*
     Component: Controls
 */
+.c-controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.c-controls__button {
+  /* text-transform: uppercase;
+  color: var(--global-html-color) */
+}
+
+.c-controls__list {
+  display: flex;
+  flex-direction: row;
+  text-transform: uppercase;
+  color: var(--global-html-color)
+
+}
+
+.c-controls__list:checked {
+  background-color: var(--global-html-backgroundColor);
+  opacity: .1;
+}
+
+.c-controls__radio {
+  /* opacity: 0; */
+}
+
+
+li {
+  /* display: inline-block; */
+}
+
+label {
+  cursor: pointer;
+}
 
 /*------------------------------------*\
 #UTILITIES

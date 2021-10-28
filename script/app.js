@@ -112,9 +112,19 @@ tl.fromTo('#Robot',{
 const btnFast = document.querySelector(".js-fast");
 const btnNormal = document.querySelector(".js-normal");
 const btnSlow = document.querySelector(".js-slow");
-const btnPauze = document.querySelector(".js-pause");
+const btnPause = document.querySelector(".js-pause");
 
 btnFast.onclick = () => tl.timeScale(2);
 btnNormal.onclick = () => tl.timeScale(1);
 btnSlow.onclick = () => tl.timeScale(0.5);
-btnPauze.onclick = () => tl.pause()
+btnPause.onclick = function(){
+  tl.paused(!tl.paused());
+} 
+
+if (!tl.paused()){
+  btnPause.classList.remove(".o-hide-accessible");
+  
+} else {
+  btnPause.classList.add(".o-hide-accessible");
+}
+  
